@@ -8,13 +8,13 @@ if (-not (Test-Path ".git")) {
     exit
 }
 
-Write-Host "Adicionando arquivos..."
+Write-Host "Adicionando arquivos..." -ForegroundColor Yellow
 git add .
 
-Write-Host "Realizando commit com a mensagem: '$Message'"
+Write-Host "Realizando commit com a mensagem: '$Message'" -ForegroundColor Yellow
 git commit -m "$Message"
 
-Write-Host "Enviando para a branch '$Branch'"
+Write-Host "Enviando para a branch '$Branch'" -ForegroundColor Yellow
 git push
 
 Write-Host "`nProcesso concluido com sucesso!" -ForegroundColor Green
