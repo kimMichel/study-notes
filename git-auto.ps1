@@ -1,5 +1,6 @@
 param (
-    [string]$Message = $(Read-Host "Digite a mensagem do commit")
+    [string]$Message = $(Read-Host "Digite a mensagem do commit"),
+    [string]$Branch = $(git rev-parse --abrev-ref HEAD)
 )
 
 if (-not (Test-Path ".git")) {
