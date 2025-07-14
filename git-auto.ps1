@@ -1,6 +1,5 @@
 param (
-    [string]$Message = $(Read-Host "Digite a mensagem do commit"),
-    [string]$Branch = $(git rev-parse --abrev-ref HEAD)
+    [string]$Message = $(Read-Host "Digite a mensagem do commit")
 )
 
 if (-not (Test-Path ".git")) {
@@ -15,6 +14,6 @@ Write-Host "Realizando commit com a mensagem: '$Message'"
 git commit -m "$Message"
 
 Write-Host "Enviando para a branch '$Branch'"
-git push origin "$Branch"
+git push
 
 Write-Host "`nProcesso concluido com sucesso!" -ForegroundColor Green
